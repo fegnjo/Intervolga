@@ -1,5 +1,5 @@
 <?php
-$input = array(1,1,1,2,1,1,1,2,1,1,1,2,1,1,1,2);
+$input = array(2,2,'hello',2,2);
 $a = 'YES';
 function input($array, $a) {
     for ($i=0; $i <count($array); $i++) {
