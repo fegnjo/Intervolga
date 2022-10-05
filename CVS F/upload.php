@@ -30,13 +30,11 @@ if($_FILES['csv']['type'] != 'text/csv' || $_FILES['csv']['type'] = ''){
     if(move_uploaded_file($_FILES['csv']['tmp_name'], 'upload/' . $_FILES['csv']['name'])){
         $file = fopen('upload/' . $_FILES['csv']['name'], 'r');
         while($data = fgetcsv($file, 200, ';')){
-            print_r($data);
+            $a = explode(',', $data[0]);
+            file_put_contents('upload/'. $a[0], str_replace('"', '', $a[1]));
         }
     }
-
-
-
-
+    unlink('upload/' . $_FILES['csv']['name']);
 }
 ?>
 </body>
