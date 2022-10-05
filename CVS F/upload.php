@@ -17,9 +17,6 @@
 </form>
 
 <?php
-
-
-
 if($_FILES['csv']['type'] != 'text/csv' || $_FILES['csv']['type'] = ''){
     echo 'Ошибка формата файла';
 }elseif($_FILES['csv']['size'] > 5*1024*1024){
